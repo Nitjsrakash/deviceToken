@@ -16,7 +16,6 @@ import {
   StatusBar,
   AsyncStorage ,Alert, FlatList,Image, TouchableOpacity
 } from 'react-native';
-import DeviceInfo from 'react-native-device-info';
 import Share from "react-native-share";
 import ImgToBase64 from 'react-native-image-base64';
 import RNFetchBlob from 'react-native-fetch-blob';
@@ -29,7 +28,7 @@ class ListItem extends Component{
         super(props); 
     }
     
-      myShare(imageUrl){
+      myShareImage(imageUrl){
           console.log("mayShare:",imageUrl)
         const shareOptions = {
             message:"This Share Image",
@@ -54,9 +53,8 @@ class ListItem extends Component{
               })
             .then(base64Data => {
               const imgData = 'data:image/png;base64,'+base64Data
-                this.myShare(imgData)
-            //   console.log("call:",imgData);
-            //   return fs.unlink(imagePath);
+                this.myShareImage(imgData)
+              return fs.unlink(imagePath);
             });
             
     }
@@ -85,3 +83,5 @@ class ListItem extends Component{
 };
 
 export default ListItem;
+
+

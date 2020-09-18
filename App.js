@@ -16,7 +16,7 @@ import {
   StatusBar,
   AsyncStorage ,Alert, FlatList
 } from 'react-native';
-import DeviceInfo from 'react-native-device-info';
+
 
 import ListItem from './ListItem'
 
@@ -57,8 +57,8 @@ class App extends Component{
     const dataValue = JSON.stringify(this.state.jsonData)
       return(
         <View>
-           <View style = {{height :50,backgroundColor:'red'}}>
-             <Text style = {{alignSelf:'center',alignItems:'center',fontSize:20}}>Photo List</Text>
+           <View style = {{height :50,backgroundColor:'red',justifyContent:'center'}}>
+             <Text style = {{alignSelf : "center",fontSize:20}}>Photo List</Text>
            </View>
          {dataValue != '' ? 
            <View style = {{}}>
